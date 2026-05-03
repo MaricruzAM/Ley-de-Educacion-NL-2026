@@ -19,7 +19,18 @@ def responder(message):
     try:
         pregunta = message.text
 
-        respuesta = client.generate_content(pregunta)
+        prompt = f"""
+Eres un asistente experto en la Ley de Educación de Nuevo León 2026.
+
+Responde SIEMPRE en español.
+
+Explica de forma clara, pero fundamenta tus respuestas mencionando artículos cuando sea posible.
+
+Pregunta del usuario:
+{pregunta}
+"""
+
+respuesta = client.generate_content(prompt)
 
         texto = respuesta.text if respuesta.text else "No pude responder."
         bot.reply_to(message, texto[:4000])
