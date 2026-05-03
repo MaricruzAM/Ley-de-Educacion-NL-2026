@@ -1,12 +1,13 @@
 import os
 import telebot
-from google import genai
+import google.generativeai as genai
 
 TOKEN = os.getenv("TOKEN_TELEGRAM")
 CLAVE_GEMINI = os.getenv("CLAVE_GEMINI")
 
 bot = telebot.TeleBot(TOKEN)
-client = genai.Client(api_key=CLAVE_GEMINI)
+genai.configure(api_key=CLAVE_GEMINI)
+client = genai.GenerativeModel(MODELO_GEMINI)
 
 @bot.message_handler(commands=["start"])
 def start(message):
@@ -17,10 +18,7 @@ def responder(message):
     try:
         pregunta = message.text
 
-        respuesta = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=pregunta
-        )
+        respuesta = client.generate_content(prompt)
 
         texto = respuesta.text if respuesta.text else "No pude responder."
         bot.reply_to(message, texto[:4000])
