@@ -34,7 +34,6 @@ Texto de la ley:
 Pregunta del usuario:
 {pregunta}
 """
-"""
 
 respuesta = client.generate_content(prompt)
 
