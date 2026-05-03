@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1EwFsRcEn4_cuTDD3JqvZUCMqxNwAx8HM
 """
 
-!apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-spa
+
 !pip install -U -q pyTelegramBotAPI google-genai
 
 import telebot
