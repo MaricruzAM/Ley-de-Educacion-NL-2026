@@ -8,7 +8,7 @@ Original file is located at
 """
 
 
-!pip install -U -q pyTelegramBotAPI google-genai
+
 
 import telebot
 import traceback
