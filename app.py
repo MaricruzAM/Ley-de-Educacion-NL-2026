@@ -1,6 +1,8 @@
 import os
 import telebot
 import google.generativeai as genai
+with open("ley_limpia.txt.txt", "r", encoding="utf-8") as f:
+    texto_ley = f.read()
 MODELO_GEMINI = "gemini-2.5-flash"
 
 TOKEN = os.getenv("TOKEN_TELEGRAM")
@@ -26,8 +28,19 @@ Responde SIEMPRE en español.
 
 Explica de forma clara, pero fundamenta tus respuestas mencionando artículos cuando sea posible.
 
+prompt = f"""
+Eres un asistente experto en la Ley de Educación de Nuevo León 2026.
+
+Responde SIEMPRE en español.
+
+Explica de forma clara, pero fundamenta tus respuestas mencionando artículos cuando sea posible.
+
+Texto de la ley:
+{texto_ley[:120000]}
+
 Pregunta del usuario:
 {pregunta}
+"""
 """
 
 respuesta = client.generate_content(prompt)
