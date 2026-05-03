@@ -24,16 +24,7 @@ MODELO_GEMINI = "gemini-2.5-flash"
 
 print("Claves configuradas correctamente")
 
-from google.colab import files
 
-print("Sube el archivo ley_limpia.txt")
-uploaded = files.upload()
-
-NOMBRE_ARCHIVO = list(uploaded.keys())[0]
-print("Archivo cargado:", NOMBRE_ARCHIVO)
-
-with open(NOMBRE_ARCHIVO, "r", encoding="utf-8") as f:
-    texto_limpio = f.read()
 
 print("Texto cargado correctamente")
 print("Caracteres cargados:", len(texto_limpio))
