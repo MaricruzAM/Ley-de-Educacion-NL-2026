@@ -2,7 +2,7 @@ import os
 import telebot
 import google.generativeai as genai
 
-with open("ley_limpia.txt.txt", "r", encoding="utf-8") as f:
+with open("ley_limpia.txt", "r", encoding="utf-8") as f:
     texto_ley = f.read()
 
 MODELO_GEMINI = "gemini-2.5-flash"
