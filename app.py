@@ -12,7 +12,7 @@ Original file is located at
 
 import telebot
 import traceback
-from google import genai
+import google.generativeai as genai
 
 TOKEN_TELEGRAM = "7750393898:AAGJqgXN8R15kdwSnWfrA1VUWPLQadMLbZQ"
 CLAVE_GEMINI = "AIzaSyBz9YNcaPwjpTUGGRSIvOUL0D3OA_KPwe8"
