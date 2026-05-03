@@ -19,7 +19,7 @@ def responder(message):
     try:
         pregunta = message.text
 
-        respuesta = client.generate_content(prompt)
+        respuesta = client.generate_content(pregunta)
 
         texto = respuesta.text if respuesta.text else "No pude responder."
         bot.reply_to(message, texto[:4000])
