@@ -35,7 +35,7 @@ Responde SIEMPRE en español.
 Explica de forma clara y fundamenta tus respuestas mencionando artículos cuando sea posible.
 
 Texto de la ley:
-{texto_ley[:30000]}
+{texto_ley}
 
 Pregunta del usuario:
 {pregunta}
