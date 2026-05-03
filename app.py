@@ -21,13 +21,6 @@ def responder(message):
     try:
         pregunta = message.text
 
-        prompt = f"""
-Eres un asistente experto en la Ley de Educación de Nuevo León 2026.
-
-Responde SIEMPRE en español.
-
-Explica de forma clara, pero fundamenta tus respuestas mencionando artículos cuando sea posible.
-
 prompt = f"""
 Eres un asistente experto en la Ley de Educación de Nuevo León 2026.
 
