@@ -1,6 +1,7 @@
 import os
 import telebot
 import google.generativeai as genai
+MODELO_GEMINI = "gemini-2.5-flash"
 
 TOKEN = os.getenv("TOKEN_TELEGRAM")
 CLAVE_GEMINI = os.getenv("CLAVE_GEMINI")
