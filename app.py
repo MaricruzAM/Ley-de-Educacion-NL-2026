@@ -18,7 +18,8 @@ TOKEN_TELEGRAM = "7750393898:AAGJqgXN8R15kdwSnWfrA1VUWPLQadMLbZQ"
 CLAVE_GEMINI = "AIzaSyBz9YNcaPwjpTUGGRSIvOUL0D3OA_KPwe8"
 
 bot = telebot.TeleBot(TOKEN_TELEGRAM)
-client = genai.Client(api_key=CLAVE_GEMINI)
+genai.configure(api_key=CLAVE_GEMINI)
+model = genai.GenerativeModel(MODELO_GEMINI)
 
 MODELO_GEMINI = "gemini-2.5-flash"
 
@@ -69,9 +70,7 @@ Pregunta:
 {pregunta}
 """
 
-        respuesta = client.models.generate_content(
-            model=MODELO_GEMINI,
-            contents=prompt
+        respuesta = model.generate_content(prompt)
         )
 
         texto_respuesta = respuesta.text if respuesta.text else "No pude generar respuesta."
