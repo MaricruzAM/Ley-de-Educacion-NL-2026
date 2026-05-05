@@ -51,7 +51,7 @@ def enviar_largo(chat_id, texto):
             encabezado = f"<b>Parte {i} de {len(partes)}</b>\n\n"
             bot.send_message(chat_id, encabezado + parte, parse_mode="HTML")
         else:
-            bot.send_message(chat_id, parte, parse_mode="HTML")
+            bot.send_message(chat_id, parte)
 
 @bot.message_handler(commands=["start"])
 def start(message):
