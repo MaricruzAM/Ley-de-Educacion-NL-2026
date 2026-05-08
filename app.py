@@ -68,4 +68,4 @@ Pregunta del usuario:
 
 
 print("Bot corriendo...")
-bot.infinity_polling()
+bot.infinity_polling(skip_pending=True)
